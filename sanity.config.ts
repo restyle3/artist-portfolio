@@ -14,7 +14,7 @@ import schemas from './sanity/schemas'
 
 
 const config = defineConfig({
-  basePath: '/studio',
+  basePath: '/admin',
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
