@@ -1,6 +1,6 @@
 const flashes = {
   name: "flash",
-  title: "flashes",
+  title: "Flashes",
   type: "document",
   fields: [
     {

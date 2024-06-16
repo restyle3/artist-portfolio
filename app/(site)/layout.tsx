@@ -1,35 +1,38 @@
-import '../globals.css'
-import Link from "next/link"
-import { getPages } from '@/sanity/sanity-utils';
+import "../globals.css";
+import Link from "next/link";
+import { getPages } from "@/sanity/sanity-utils";
 
 export const metadata = {
-  title: 'Fairies and Goblins',
+  title: "Fairies and Goblins",
   description: "Maria's portfolio!",
-}
+};
 
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   //get all pages
   const pages = await getPages();
 
   return (
-    <html lang="en">
-      <body className="max-w-3xl mx-auto py-10">
-        <header className="flex items-center justify-between">
-          <Link href="/" className="bg-gradient-to-r from-forest-green via-moss-green to-mint-green bg-clip-text text-transparent text-lg font-bold">Fairies and Goblins</Link>
-          <div className="flex items-center gap-5 text-sm text-gray-600">
-            {pages.map((page) => (
-              <Link key={page._id} href={`/${page.slug}`} className="hover:underline">{page.title}</Link>
-            ))}
-
-          </div>
-
-        </header>
-        <main className="py-20">{children}</main>
+    <html>
+      <body>
+        <div className="flex h-screen">
+          <aside className="bg-gray-800 text-white w-64 space-y-6 py-7 px-2">
+            <nav className="mt-6">
+              {pages.map((page) => (
+                <Link key={page._id} href={`/${page.slug}`}>
+                  <div className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    {page.title}
+                  </div>
+                </Link>
+              ))}
+            </nav>
+          </aside>
+            <main className="flex-1 p-10 overflow-y-auto">{children}</main>
+        </div>
       </body>
     </html>
-  )
+  );
 }
