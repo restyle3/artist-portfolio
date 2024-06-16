@@ -1,5 +1,5 @@
 import { getProjects } from "@/sanity/sanity-utils";
-import "./globals.css";
+import "../globals.css";
 import Link from "next/link";
 import Image from "next/image";
 
