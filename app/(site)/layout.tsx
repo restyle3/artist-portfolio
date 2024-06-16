@@ -12,6 +12,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  //get all pages
   const pages = await getPages();
 
   return (
