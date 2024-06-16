@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type Project = {
+export type Flash = {
     _id: string;
     _createdAt: Date;
     name: string;

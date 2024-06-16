@@ -1,6 +1,6 @@
-import project from './project-schema'
+import flashes from './flash-schema'
 import page from "./page-schema"
 
-const schemas = [project, page];
+const schemas = [flashes, page];
 
 export default schemas;
